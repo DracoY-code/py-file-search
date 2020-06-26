@@ -1,5 +1,6 @@
 # Search a string in a directory
 # ~ DracoY
+import argparse
 import os
 
 
@@ -34,11 +35,30 @@ def search(path, string, file_type):
 
 
 # __main__
-path = input('Enter path: ')
-string = input('Search: ')
-file_type = input('File type: ')
+parser = argparse.ArgumentParser(
+    description='Search a string in a directory!'
+)
 
-search(path, string, file_type)
+parser.add_argument('string',
+                    help='String to be searched',
+                    action='store',
+                    type=str)
+
+parser.add_argument('type',
+                    help='The type of the files to be searched',
+                    type=str)
+
+parser.add_argument('-p',
+                    '--path',
+                    help='Pass path to the directory',
+                    default='./')
+
+
+args = parser.parse_args()
+
+
+search(args.path, args.string, args.type)
+
 
 os.system('pause')
 os.system('cls')
