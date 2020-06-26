@@ -11,7 +11,7 @@ def search(path, string, file_type):
         path = '.'
 
     # Add slashes
-    if not path.endswith('/') or path.endswith('\\'):
+    if not (path.endswith('/') or path.endswith('\\')):
         path += '/'
 
 
@@ -22,27 +22,15 @@ def search(path, string, file_type):
         if file.endswith(file_type) or file.endswith('.' + file_type):
 
             # Surf file to check search exists
-            f = open(path + file)
-            
-            line = f.readline()
-            linenum = 1
+            with open(path + file) as f:
+                data = f.readlines()
 
-            # Loop till EOL
-            while line:
-                # Search for string
-                index = line.find(string)
+            for linenum, line in enumerate(data):
+                line = line.lower().strip()
+                index = line.find(string.lower().strip())
 
-                # Not found
                 if (index != -1):
-                    print(file, '[', linenum, ':', index, ']')
-
-                # Read next line
-                f.readline()
-
-                linenum += 1
-
-            # Close file
-            f.close()
+                    print(f'{file} [ {linenum + 1} : {index} ]')
 
 
 # __main__
@@ -53,3 +41,4 @@ file_type = input('File type: ')
 search(path, string, file_type)
 
 os.system('pause')
+os.system('cls')
