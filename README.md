@@ -12,6 +12,6 @@ The terminal app helps you search a string in a particular directory.
 
 Reviews are welcome! :)
 
-* ![Github](https://github.com/DracoY-code/)
-* ![Reddit](https://reddit.com/user/Red_Death_08/)
-* ![Discord](htpps://discord.com/@DracoY#5089/)
+>* [GitHub](https://github.com/DracoY-code)
+>* [Reddit](https://reddit.com/user/Red_Death_08)
+>* [Discord](https://discord.gg/@DracoY#5089)
