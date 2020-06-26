@@ -2,11 +2,9 @@
 
 The terminal app helps you search a string in a particular directory.
 
-> Note: Currently working on command line options.
-
 * V0 -> Pre-release
 * V1 -> Script
-* V2 -> CLI (upcoming; master)
+* V2 -> CLI (master)
 
 ## Developer Contacts
 
